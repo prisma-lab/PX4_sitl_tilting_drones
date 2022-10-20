@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="Perching_platform">
+    <static>false</static>
+    <link name="support_link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5e-3 5e-3 5e-3</scale>
+            <uri>model://Perching_platform/meshes/base.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5e-3 5e-3 5e-3</scale>
+            <uri>model://Perching_platform/meshes/base.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="plane_link">
+      <pose> 0.15 -0.12 0.22 0 0 0 </pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5e-3 5e-3 5e-3</scale>
+            <uri>model://Perching_platform/meshes/plane.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5e-3 5e-3 5e-3</scale>
+            <uri>model://Perching_platform/meshes/plane.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name='base_to_plane_joint' type='revolute'>
+      <pose>0.0 0 5.15 0.0 0 0</pose>
+      <child>plane_link</child>
+      <parent>support_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <friction>1.0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>
