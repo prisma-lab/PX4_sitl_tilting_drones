@@ -7,14 +7,14 @@
       <inertial>
 	<!-- TO DO: Correct mass and inertias -->
         <pose>0 0 0 0 0 0</pose>
-        <mass>2.260803677220633</mass>
+        <mass>2.5</mass>
         <inertia>
-          <ixx>0.088329</ixx>
-          <ixy>0.000113</ixy>
-          <ixz>-2.4e-05</ixz>
-          <iyy>0.101628</iyy>
-          <iyz>0.7e-06</iyz>
-          <izz>0.104362</izz>
+          <ixx>0.15</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.15</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.15</izz>
         </inertia>
       </inertial>
       <collision name='base_link_inertia_collision'>
@@ -99,7 +99,7 @@
      <link name='tilt_arm_2'>
       <pose>0 0 0 0 0 0</pose>
       <inertial>
-        <pose>0.30 0.0 0.0 0 0 0</pose>
+        <pose>0.0 0.0 0.0 0 0 0</pose>
         <mass>0.4031180930624021</mass>
         <inertia>
           <ixx>0.001829</ixx>
@@ -1037,7 +1037,7 @@
     </plugin>
     <include>
       <uri>model://gps</uri>
-      <pose>0.1 0 0 0 0 0</pose>
+      <pose>0.0 0 0 0 0 0</pose>
       <name>gps0</name>
     </include>
     <joint name='gps0_joint' type='fixed'>
